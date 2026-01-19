@@ -30,6 +30,23 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
+        /* Timeline Connector Line */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 4px;
+            background: #e5e7eb;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-line::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
     </style>
 </head>
 <body class="text-gray-800 bg-white">
@@ -44,7 +61,7 @@
             <div class="hidden md:flex space-x-6 text-sm font-medium text-gray-500">
                 <a href="#problem" class="hover:text-orange-600 transition">Ausgangslage</a>
                 <a href="#solution" class="hover:text-orange-600 transition">Das Konzept</a>
-                <a href="#topics" class="hover:text-orange-600 transition">Themen</a>
+                <a href="#topics" class="hover:text-orange-600 transition">Jahresplan</a>
                 <a href="#benefits" class="hover:text-orange-600 transition">Mehrwert</a>
                 <a href="#logistics" class="hover:text-orange-600 transition">Umsetzung</a>
             </div>
@@ -53,12 +70,10 @@
 
     <!-- Hero Section -->
     <section class="h-screen flex items-center justify-center bg-gray-900 text-white relative overflow-hidden">
-        <!-- Abstract Background -->
         <div class="absolute inset-0 opacity-20">
             <div class="absolute -right-20 -top-20 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>
             <div class="absolute -left-20 bottom-0 w-80 h-80 bg-blue-600 rounded-full blur-3xl"></div>
         </div>
-
         <div class="container mx-auto px-6 relative z-10 text-center">
             <div class="inline-block bg-orange-600 text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-wide uppercase">Projektvorstellung 2026</div>
             <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -83,16 +98,12 @@
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
                 <h2 class="text-4xl font-bold mb-12 text-gray-800 border-l-8 border-orange-600 pl-6">Die aktuelle Situation</h2>
-                
                 <div class="grid md:grid-cols-3 gap-8 items-center text-center">
-                    <!-- Pillar 1 -->
                     <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-gray-400">
                         <div class="text-4xl mb-4 text-gray-400"><i class="fas fa-school"></i></div>
                         <h3 class="text-xl font-bold mb-2">Schule</h3>
                         <p class="text-gray-600 text-sm">Theoretisches Fachwissen, allgemein gültig.</p>
                     </div>
-
-                    <!-- The Gap -->
                     <div class="relative">
                         <div class="absolute inset-0 flex items-center justify-center -z-10">
                             <div class="h-2 w-full bg-gray-200"></div>
@@ -105,18 +116,15 @@
                         </div>
                         <p class="mt-4 text-sm font-medium text-gray-500">Kein Transfer auf <br>Betriebsprozesse</p>
                     </div>
-
-                    <!-- Pillar 2 -->
                     <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-gray-800">
                         <div class="text-4xl mb-4 text-gray-800"><i class="fas fa-hammer"></i></div>
                         <h3 class="text-xl font-bold mb-2">Alltag</h3>
                         <p class="text-gray-600 text-sm">Produktion, Termindruck, "Learning by doing".</p>
                     </div>
                 </div>
-
                 <div class="mt-16 bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
                     <p class="text-lg text-blue-900">
-                        <span class="font-bold">Das Problem:</span> Wir haben exzellentes Schulwissen und fleissige Hände, aber das <strong>spezifische R. Brunner Know-how</strong> (unsere Maschinen, unsere Lagerhaltung, unsere Standards) wird oft nur "nebenbei" vermittelt.
+                        <span class="font-bold">Das Problem:</span> Wir haben exzellentes Schulwissen und fleissige Hände, aber das <strong>spezifische R. Brunner Know-how</strong> wird oft nur "nebenbei" vermittelt.
                     </p>
                 </div>
             </div>
@@ -133,7 +141,6 @@
                     <p class="text-lg text-gray-600 mb-6 leading-relaxed">
                         Wir etablieren ein <strong>3. Standbein</strong>. 9-10 mal im Jahr findet nach der Arbeit ein intensiver, praxisorientierter Workshop statt.
                     </p>
-                    
                     <ul class="space-y-4">
                         <li class="flex items-start">
                             <div class="bg-green-100 text-green-600 rounded-full p-1 mr-3 mt-1"><i class="fas fa-check text-xs"></i></div>
@@ -146,45 +153,34 @@
                             <div class="bg-green-100 text-green-600 rounded-full p-1 mr-3 mt-1"><i class="fas fa-check text-xs"></i></div>
                             <div>
                                 <strong class="block text-gray-900">Wann?</strong>
-                                <span class="text-gray-500">1x Monatlich, 17:30 - max. 20:30 Uhr (Freizeit der Lernenden).</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="bg-green-100 text-green-600 rounded-full p-1 mr-3 mt-1"><i class="fas fa-check text-xs"></i></div>
-                            <div>
-                                <strong class="block text-gray-900">Was?</strong>
-                                <span class="text-gray-500">Theorie + Test + Praxis. Geleitet vom Fachexperten.</span>
+                                <span class="text-gray-500">1x Monatlich (ca. 7 pro Schuljahr), 17:30 - max. 20:30 Uhr.</span>
                             </div>
                         </li>
                     </ul>
                 </div>
-                
-                <!-- Timeline Card -->
                 <div class="bg-gray-900 text-white rounded-2xl p-8 shadow-2xl relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-32 bg-orange-500 rounded-full filter blur-3xl opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
-                    
                     <h3 class="text-xl font-bold mb-6 border-b border-gray-700 pb-2">Ablauf eines Abends</h3>
-                    
                     <div class="space-y-6 relative z-10">
                         <div class="flex gap-4">
                             <div class="w-16 font-mono text-orange-400 font-bold text-right">17:30</div>
                             <div class="border-l-2 border-gray-700 pl-4 pb-2">
                                 <h4 class="font-bold">Start & Kurztest</h4>
-                                <p class="text-sm text-gray-400">10 Min. Repetition des letzten Themas (Multiple Choice).</p>
+                                <p class="text-sm text-gray-400">10 Min. Repetition des letzten Themas.</p>
                             </div>
                         </div>
                         <div class="flex gap-4">
                             <div class="w-16 font-mono text-orange-400 font-bold text-right">17:45</div>
                             <div class="border-l-2 border-gray-700 pl-4 pb-2">
                                 <h4 class="font-bold">Theorie-Block</h4>
-                                <p class="text-sm text-gray-400">20-30 Min. Materialkunde, Maschinenparameter, Handout.</p>
+                                <p class="text-sm text-gray-400">20-30 Min. Materialkunde & Handout.</p>
                             </div>
                         </div>
                         <div class="flex gap-4">
                             <div class="w-16 font-mono text-orange-400 font-bold text-right">18:15</div>
                             <div class="border-l-2 border-gray-700 pl-4 pb-6">
                                 <h4 class="font-bold">Praxis in der Werkstatt</h4>
-                                <p class="text-sm text-gray-400">90-120 Min. Alle an die Maschinen. Zeichnerinnen lernen das Material fühlen.</p>
+                                <p class="text-sm text-gray-400">90-120 Min. Umsetzung an Maschinen & Werkbank.</p>
                             </div>
                         </div>
                         <div class="flex gap-4">
@@ -199,77 +195,165 @@
         </div>
     </section>
 
-    <!-- 3. Topics (Showcase) -->
+    <!-- 3. Topics (Showcase / Timeline) -->
     <section id="topics" class="slide-section bg-gray-50 py-20">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Geplante Themenmodule</h2>
-                <p class="text-gray-600">Beispiele für die monatlichen Schwerpunkte</p>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Der Jahresplan</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Start jeweils im August zum neuen Lehrjahr. Wir planen 7 Workshops pro Jahr, unter Berücksichtigung der Ferien (Juli, Weihnachten).
+                </p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-                <!-- Card 1 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 card-hover group cursor-pointer">
-                    <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-lg flex items-center justify-center mb-4 text-xl group-hover:bg-amber-600 group-hover:text-white transition">
+            <!-- Vertical Timeline -->
+            <div class="relative timeline-line max-w-4xl mx-auto">
+                
+                <!-- Block 1: Massivholz (Annual) -->
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-6 mb-12 group">
+                    <div class="hidden md:block w-1/2 text-right pr-8">
+                        <span class="text-sm font-bold text-orange-600 uppercase tracking-wider">Start August</span>
+                        <h3 class="text-2xl font-bold">1. Massivholz</h3>
+                        <p class="text-gray-500 text-sm mt-1">Jährlich wiederkehrend</p>
+                    </div>
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-orange-600 text-white flex items-center justify-center font-bold shadow-lg border-4 border-white">1</div>
+                    <div class="w-full md:w-1/2 bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition">
+                        <div class="md:hidden text-orange-600 font-bold text-xs uppercase mb-1">Start August</div>
+                        <h3 class="md:hidden font-bold text-lg mb-2">Massivholz</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li>Rüsten & Holzarten bestimmen</li>
+                            <li>Lagerhaltung & Trocknung</li>
+                            <li>Hobeln & Verleimen von Brettern</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Block 2: Reissen (Annual) -->
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-6 mb-12">
+                    <div class="w-full md:w-1/2 md:text-right bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition md:order-1">
+                        <div class="md:hidden text-orange-600 font-bold text-xs uppercase mb-1">Herbst</div>
+                        <h3 class="md:hidden font-bold text-lg mb-2">Reissen</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li>Holzreissen für Fragmente</li>
+                            <li>Bearbeitung gemäss VSSM-Standard</li>
+                        </ul>
+                    </div>
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-orange-600 text-white flex items-center justify-center font-bold shadow-lg border-4 border-white md:order-2">2</div>
+                    <div class="hidden md:block w-1/2 pl-8 md:order-3">
+                        <h3 class="text-2xl font-bold">2. Reissen</h3>
+                        <p class="text-gray-500 text-sm mt-1">Jährlich wiederkehrend</p>
+                    </div>
+                </div>
+
+                <!-- Block 3: Kehlen (Annual) -->
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-6 mb-12">
+                    <div class="hidden md:block w-1/2 text-right pr-8">
+                        <h3 class="text-2xl font-bold">3. Kehlen & Tischfräse</h3>
+                        <p class="text-gray-500 text-sm mt-1">Jährlich wiederkehrend</p>
+                    </div>
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-orange-600 text-white flex items-center justify-center font-bold shadow-lg border-4 border-white">3</div>
+                    <div class="w-full md:w-1/2 bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition">
+                        <div class="md:hidden text-orange-600 font-bold text-xs uppercase mb-1">Spätherbst</div>
+                        <h3 class="md:hidden font-bold text-lg mb-2">Kehlen & Tischfräse</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li>Maschinenbedienung & Sicherheit</li>
+                            <li>Klassische Bearbeitungen</li>
+                            <li>Aufbauend auf "Reissen"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Block 4: Wechsel Leimen/CNC -->
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-6 mb-12">
+                    <div class="w-full md:w-1/2 md:text-right bg-white p-0 rounded-xl shadow-sm border border-gray-200 overflow-hidden md:order-1 flex flex-col md:flex-row">
+                        <!-- Left Option -->
+                        <div class="p-5 flex-1 bg-gray-50 border-b md:border-b-0 md:border-r border-gray-200">
+                            <div class="text-xs font-bold text-blue-600 mb-1">Jahr A</div>
+                            <h4 class="font-bold text-gray-900 mb-2">Leimen</h4>
+                            <p class="text-xs text-gray-600">Mix: Holz, Kunststoff, Glas, Metall. Primer & Zwingen.</p>
+                        </div>
+                        <!-- Center Divider -->
+                        <div class="flex items-center justify-center bg-gray-200 text-gray-500 text-[10px] uppercase font-bold tracking-widest py-1 md:py-0 md:px-1 md:writing-mode-vertical">
+                            ODER
+                        </div>
+                        <!-- Right Option -->
+                        <div class="p-5 flex-1 bg-white">
+                            <div class="text-xs font-bold text-purple-600 mb-1">Jahr B</div>
+                            <h4 class="font-bold text-gray-900 mb-2">CNC</h4>
+                            <p class="text-xs text-gray-600">Werkzeugkunde, Zerspanung, Spannmittel.</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold shadow-lg border-4 border-white md:order-2">4</div>
+                    <div class="hidden md:block w-1/2 pl-8 md:order-3">
+                        <span class="text-sm font-bold text-blue-600 uppercase tracking-wider">Winter</span>
+                        <h3 class="text-2xl font-bold">Verbindungstechnik</h3>
+                        <p class="text-gray-500 text-sm mt-1 flex items-center"><i class="fas fa-sync-alt mr-2 text-xs"></i> Jedes 2. Jahr im Wechsel</p>
+                    </div>
+                </div>
+
+                <!-- Block 5: Wechsel Belegen -->
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-6 mb-12">
+                    <div class="hidden md:block w-1/2 text-right pr-8">
+                        <span class="text-sm font-bold text-blue-600 uppercase tracking-wider">Frühling</span>
+                        <h3 class="text-2xl font-bold">Belegen & Oberfläche</h3>
+                        <p class="text-gray-500 text-sm mt-1 flex items-center justify-end"><i class="fas fa-sync-alt mr-2 text-xs"></i> Jedes 2. Jahr im Wechsel</p>
+                    </div>
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold shadow-lg border-4 border-white">5</div>
+                    <div class="w-full md:w-1/2 bg-white p-0 rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col md:flex-row">
+                         <!-- Left Option -->
+                         <div class="p-5 flex-1 bg-gray-50 border-b md:border-b-0 md:border-r border-gray-200">
+                            <div class="text-xs font-bold text-blue-600 mb-1">Jahr A: Kunststoffe</div>
+                            <p class="text-xs text-gray-600">Kunstharz Prozesse, Hi-Macs, Breitband-Schleifen, Grundierfolie.</p>
+                        </div>
+                        <div class="flex items-center justify-center bg-gray-200 text-gray-500 text-[10px] uppercase font-bold tracking-widest py-1 md:py-0 md:px-1 md:writing-mode-vertical">
+                            ODER
+                        </div>
+                        <!-- Right Option -->
+                         <div class="p-5 flex-1 bg-white">
+                            <div class="text-xs font-bold text-purple-600 mb-1">Jahr B: Furnier</div>
+                            <p class="text-xs text-gray-600">Fügen, Nähen, Belegen, Verputzen, Ölen/Lackieren.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Block 6: Handmaschinen (Annual) -->
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-6 mb-12">
+                    <div class="w-full md:w-1/2 md:text-right bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition md:order-1">
+                        <div class="md:hidden text-orange-600 font-bold text-xs uppercase mb-1">Frühsommer</div>
+                        <h3 class="md:hidden font-bold text-lg mb-2">Handmaschinen</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li>Stichsäge & Oberfräse</li>
+                            <li>Hobelmaschine, Tischkreissäge</li>
+                            <li>Flex / Winkelschleifer</li>
+                        </ul>
+                    </div>
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-orange-600 text-white flex items-center justify-center font-bold shadow-lg border-4 border-white md:order-2">6</div>
+                    <div class="hidden md:block w-1/2 pl-8 md:order-3">
+                        <h3 class="text-2xl font-bold">6. Handmaschinen</h3>
+                        <p class="text-gray-500 text-sm mt-1">Jährlich wiederkehrend</p>
+                    </div>
+                </div>
+
+                <!-- Block 7: Waldrundgang (Annual Highlight) -->
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-6">
+                    <div class="hidden md:block w-1/2 text-right pr-8">
+                        <span class="text-sm font-bold text-green-600 uppercase tracking-wider">Juni (Abschluss)</span>
+                        <h3 class="text-2xl font-bold text-green-800">7. Waldrundgang & Grill</h3>
+                        <p class="text-gray-500 text-sm mt-1">Gemeinsamer Abschluss mit Team</p>
+                    </div>
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center text-xl shadow-lg border-4 border-white z-20">
                         <i class="fas fa-tree"></i>
                     </div>
-                    <h3 class="font-bold text-lg mb-2">Massivholz</h3>
-                    <p class="text-xs text-gray-500">Rüsten, Bestimmen, Lagerhaltung R. Brunner.</p>
+                    <div class="w-full md:w-1/2 bg-green-50 p-6 rounded-xl shadow-md border border-green-200 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-12 bg-green-200 rounded-full opacity-30 -mr-6 -mt-6"></div>
+                        <div class="md:hidden text-green-600 font-bold text-xs uppercase mb-1">Juni (Abschluss)</div>
+                        <h3 class="md:hidden font-bold text-lg mb-2 text-green-900">Waldrundgang</h3>
+                        <p class="text-sm text-green-900 mb-3 font-medium">Baumsorten, Charakteristiken, Waldwirtschaft & Ökologie.</p>
+                        <p class="text-xs text-green-700 italic border-t border-green-200 pt-2">
+                            <i class="fas fa-utensils mr-1"></i> Anschliessendes Grillen mit Lernenden & MA.
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 card-hover group cursor-pointer">
-                    <div class="w-12 h-12 bg-orange-100 text-orange-700 rounded-lg flex items-center justify-center mb-4 text-xl group-hover:bg-orange-600 group-hover:text-white transition">
-                        <i class="fas fa-layer-group"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Belegen</h3>
-                    <p class="text-xs text-gray-500">Furnier & Kunstharz Prozesse.</p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 card-hover group cursor-pointer">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center mb-4 text-xl group-hover:bg-blue-600 group-hover:text-white transition">
-                        <i class="fas fa-wind"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Schleifen</h3>
-                    <p class="text-xs text-gray-500">Manuell vs. Maschinell. Körnungen.</p>
-                </div>
-                
-                 <!-- Card 4 -->
-                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 card-hover group cursor-pointer">
-                    <div class="w-12 h-12 bg-green-100 text-green-700 rounded-lg flex items-center justify-center mb-4 text-xl group-hover:bg-green-600 group-hover:text-white transition">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Waldrundgang</h3>
-                    <p class="text-xs text-gray-500">Ökologie, Bestimmen am lebenden Objekt.</p>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 card-hover group cursor-pointer">
-                    <div class="w-12 h-12 bg-gray-100 text-gray-700 rounded-lg flex items-center justify-center mb-4 text-xl group-hover:bg-gray-800 group-hover:text-white transition">
-                        <i class="fas fa-cube"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Hi-Macs</h3>
-                    <p class="text-xs text-gray-500">Bearbeitung Mineralverbundstoff.</p>
-                </div>
-
-                 <!-- Card 6 -->
-                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 card-hover group cursor-pointer">
-                    <div class="w-12 h-12 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center mb-4 text-xl group-hover:bg-purple-600 group-hover:text-white transition">
-                        <i class="fas fa-fill-drip"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Oberfläche</h3>
-                    <p class="text-xs text-gray-500">Ölen, Beizen, Lacke & Spritzraum.</p>
-                </div>
-                
-                <!-- Highlight Card -->
-                <div class="bg-gradient-to-br from-orange-500 to-red-600 p-6 rounded-xl shadow-lg text-white col-span-2 md:col-span-1 flex flex-col justify-center">
-                    <h3 class="font-bold text-lg mb-2">Peer-Learning</h3>
-                    <p class="text-sm opacity-90 mb-2">Lernende 3./4. Jahr übernehmen Teile der Schulung.</p>
-                    <div class="mt-auto pt-2 border-t border-white/20 text-xs font-bold uppercase tracking-wider">
-                        Fördert Selbstvertrauen
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -278,7 +362,6 @@
     <section id="benefits" class="slide-section bg-white py-20">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold mb-16 text-center text-gray-900">Warum tun wir das?</h2>
-            
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- Left: Operation -->
                 <div>
@@ -307,7 +390,6 @@
                         </li>
                     </ul>
                 </div>
-
                 <!-- Right: Culture -->
                 <div>
                     <h3 class="text-2xl font-bold mb-6 text-gray-700">Für die Kultur</h3>
@@ -323,11 +405,10 @@
                             <div class="flex-shrink-0 w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-bold mr-4">2</div>
                             <div>
                                 <h4 class="font-bold text-gray-900">Mut zur Frage</h4>
-                                <p class="text-sm text-gray-600">Im Workshop-Setting trauen sie sich mehr zu fragen als im Hektischen Arbeitsalltag.</p>
+                                <p class="text-sm text-gray-600">Im Workshop-Setting trauen sie sich mehr zu fragen als im hektischen Arbeitsalltag.</p>
                             </div>
                         </li>
                     </ul>
-                    
                     <div class="mt-8 bg-gray-50 p-6 rounded-lg border border-gray-200 italic text-gray-600">
                         "Dieses Modell war in meinem Lehrbetrieb vor 13 Jahren bereits ein Erfolgsschlüssel." <br>
                         <span class="text-sm font-bold not-italic mt-2 block text-gray-900">- Juan Hausherr</span>
@@ -342,7 +423,6 @@
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
                 <h2 class="text-4xl font-bold mb-10 border-b border-gray-700 pb-4">Fakten & Umsetzung</h2>
-
                 <!-- The Deal Comparison -->
                 <div class="grid md:grid-cols-2 gap-8 mb-12">
                     <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
@@ -362,7 +442,6 @@
                             </li>
                         </ul>
                     </div>
-
                     <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
                         <h3 class="text-xl font-bold text-blue-400 mb-4">Investition Betrieb</h3>
                         <ul class="space-y-3 text-sm text-gray-300">
@@ -381,7 +460,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <!-- Implementation Timeline -->
                 <div class="bg-white text-gray-900 p-8 rounded-xl">
                     <h3 class="text-xl font-bold mb-4">Nächste Schritte</h3>
@@ -408,7 +486,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="mt-8 pt-6 border-t border-gray-200 text-center">
                         <p class="font-bold text-lg mb-4">Wir bitten um Freigabe für Schritt 2.</p>
                         <button onclick="alert('Vielen Dank für die Aufmerksamkeit!')" class="bg-orange-600 text-white px-8 py-3 rounded-lg hover:bg-orange-700 transition font-bold shadow-lg">
@@ -416,7 +493,6 @@
                         </button>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -426,7 +502,6 @@
     </footer>
 
     <script>
-        // Simple interactive script if needed
         console.log("Pitch Deck loaded.");
     </script>
 </body>
